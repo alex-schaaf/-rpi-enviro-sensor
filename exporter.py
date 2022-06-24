@@ -47,14 +47,14 @@ def main():
     temperature_gauge_raw = Gauge("environ_temp_raw", "Environment Temperature (raw)")
     temperature_gauge = Gauge("environ_temp", "Environment Temperature")
     # start http server, providing readings
-    logging.DEBUG(f"Starting HTTP Server at localhost:{EXPORTER_PORT}")
+    # logging.DEBUG(f"Starting HTTP Server at localhost:{EXPORTER_PORT}")
     start_http_server(EXPORTER_PORT)
 
     while True:
         temp_raw = bme280.get_temperature()
-        logging.DEBUG(f"{temp_raw=:.01f}")
+        # logging.DEBUG(f"{temp_raw=:.01f}")
         temp = compensate_raw_temperature(temp_raw)
-        logging.DEBUG(f"{temp=:.01f}")
+        # logging.DEBUG(f"{temp=:.01f}")
 
         temperature_gauge_raw.set(temp_raw)
         temperature_gauge.set(temp)
