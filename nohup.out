@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/home/pi/environ-exporter/./exporter.py", line 66, in <module>
-    main()
-  File "/home/pi/environ-exporter/./exporter.py", line 50, in main
-    logging.DEBUG(f"Starting HTTP Server at localhost:{EXPORTER_PORT}")
-TypeError: 'int' object is not callable
